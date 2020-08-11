@@ -102,7 +102,7 @@ for i in range(0,len(predictions)):
     for k in range(0,len(predictions[i])):
         if predictions[i][k]*100 > 25: 
             v = str(shapes[k]) + ":" + str(predictions[i][k]*100)
-            print(v)
+
             try:
                 x = round(math.sqrt(s))/noofshapes
             except:
@@ -110,6 +110,7 @@ for i in range(0,len(predictions)):
             noofshapes -= 1
             tx = ImageDraw.Draw(image)
             tx.text((x,x),v,fill=(0,0,0,0))
+            
             image.save("a.png")
     image.show()
 
